@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="15S-JD-GgZ">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="PC7-lB-8kL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="15S-JD-GgZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="msL-Jf-SYV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lrF-MF-gFs" kind="relationship" relationship="rootViewController" id="RAc-Tp-mSm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NcV-N9-n3Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1274" y="224"/>
+        </scene>
+        <!--Categories Table View Controller-->
+        <scene sceneID="Ek9-HT-u0i">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Pz-PO-GQq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tableViewController id="lrF-MF-gFs" customClass="CategoriesTableViewController" customModule="ChuckNorrisJokeAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Tts-9h-fw4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="7tq-R5-vZF">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7tq-R5-vZF" id="5eW-EP-f2w">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="eUQ-UY-E0g" kind="show" id="RfU-86-qIc"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lrF-MF-gFs" id="rD6-Mh-AVa"/>
+                            <outlet property="delegate" destination="lrF-MF-gFs" id="74n-QF-9eH"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Lhf-1I-vbl">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="shuffle" catalog="system" style="plain" id="aDT-25-lQz">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="laU-c5-aRN">
+                                <rect key="frame" x="16" y="11" width="78" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="shuffle" catalog="system"/>
+                            </button>
+                            <connections>
+                                <action selector="shuffleButton:" destination="lrF-MF-gFs" id="fLw-43-acq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="-486" y="225"/>
+        </scene>
+        <!--Joke View Controller-->
+        <scene sceneID="D7t-fY-AE4">
+            <objects>
+                <viewController id="eUQ-UY-E0g" customClass="JokeViewController" customModule="ChuckNorrisJokeAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aqk-Hc-Qkf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chuck-norris" translatesAutoresizingMaskIntoConstraints="NO" id="Mhd-x4-maL">
+                                <rect key="frame" x="67.5" y="168" width="240" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="XB7-vu-0GF"/>
+                                    <constraint firstAttribute="height" constant="130" id="yuU-Dh-j0m"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMW-LC-FHI">
+                                <rect key="frame" x="30" y="338" width="315" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="XfM-6g-SXr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urq-5B-1S7">
+                                <rect key="frame" x="87.5" y="510" width="200" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="F2h-T6-ruK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="30"/>
+                                <state key="normal" title="RELOAD"/>
+                                <connections>
+                                    <action selector="changeButton:" destination="eUQ-UY-E0g" eventType="touchUpInside" id="M6H-cQ-H96"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zch-mI-Dn2">
+                                <rect key="frame" x="37.5" y="125" width="300" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="qoW-Lx-n5O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OSK-tU-Bxn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OSK-tU-Bxn" firstAttribute="trailing" secondItem="cMW-LC-FHI" secondAttribute="trailing" constant="30" id="UN0-kM-dtE"/>
+                            <constraint firstItem="OSK-tU-Bxn" firstAttribute="bottom" secondItem="urq-5B-1S7" secondAttribute="bottom" constant="104" id="XPW-PA-vbf"/>
+                            <constraint firstItem="Zch-mI-Dn2" firstAttribute="top" secondItem="OSK-tU-Bxn" secondAttribute="top" constant="81" id="Zpm-Hm-kmV"/>
+                            <constraint firstItem="Mhd-x4-maL" firstAttribute="centerX" secondItem="Zch-mI-Dn2" secondAttribute="centerX" id="k3e-qk-wQd"/>
+                            <constraint firstItem="cMW-LC-FHI" firstAttribute="top" secondItem="Mhd-x4-maL" secondAttribute="bottom" constant="40" id="mvO-yZ-npH"/>
+                            <constraint firstItem="urq-5B-1S7" firstAttribute="centerX" secondItem="cMW-LC-FHI" secondAttribute="centerX" id="ruk-Lk-ahJ"/>
+                            <constraint firstItem="cMW-LC-FHI" firstAttribute="leading" secondItem="OSK-tU-Bxn" secondAttribute="leading" constant="30" id="ry3-hJ-X9d"/>
+                            <constraint firstItem="urq-5B-1S7" firstAttribute="top" secondItem="cMW-LC-FHI" secondAttribute="bottom" constant="52" id="tKV-go-GUI"/>
+                            <constraint firstItem="Zch-mI-Dn2" firstAttribute="centerX" secondItem="aqk-Hc-Qkf" secondAttribute="centerX" id="uIN-8x-dPw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hau-bP-FDp"/>
+                    <connections>
+                        <outlet property="imageView" destination="Mhd-x4-maL" id="vqF-W7-bTu"/>
+                        <outlet property="textLabel" destination="cMW-LC-FHI" id="iu5-2A-KdE"/>
+                        <outlet property="titleLabel" destination="Zch-mI-Dn2" id="Vka-E3-PxZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9eH-Jj-1RX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="281" y="225"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chuck-norris" width="452" height="452"/>
+        <image name="shuffle" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
